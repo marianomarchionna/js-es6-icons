@@ -41,6 +41,10 @@ h1 {
     background-color: #30b4de;
 }
 
+#type {
+    cursor: pointer;
+}
+
 #icons {
     width: 100%;
     height: calc(100vh - 20vh);
