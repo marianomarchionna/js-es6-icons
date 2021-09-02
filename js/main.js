@@ -1,5 +1,3 @@
-// Milestone 3
-// Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 const icons = [
     {
       name: 'cat',
@@ -109,7 +107,16 @@ const iconsContainer = document.getElementById('icons');
 
 const coloredArray = colorIcons(icons, colors);
 print(coloredArray, iconsContainer);
+const types = getTypes(coloredArray);
+const select = document.getElementById('type');
+printOptions(types, select);
 
+
+select.onchange = function(element) {
+  const filtered = filterValues(icons, element.target.value);
+
+  print(filtered, iconsContainer);
+};
 // funzioni
 
 // Milestone 1
@@ -148,4 +155,29 @@ function colorIcons(array, colors){
     return element;
   });
   return coloredArray;
+}
+
+// Milestone 3
+// Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+
+function printOptions(array, select){
+  array.forEach((element) => {
+    select.innerHTML += 
+    `
+      <option value="${element}">${element}</option>
+    `;
+  });
+}
+
+function filterValues(array, type) {
+  const filteredIcons = array.filter((element) =>{
+    if(element.type === type) {
+      return true;
+    }
+    return false;
+  });
+  if(type === '') {
+    return array;
+  }
+  return filteredIcons;
 }

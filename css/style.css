@@ -30,12 +30,24 @@ h1 {
 }
 /* fine header */
 /* main */
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    padding: 5px;
+    font-size: large;
+    color: white;
+    background-color: #30b4de;
+}
+
 #icons {
     width: 100%;
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 20vh);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    align-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -43,7 +55,7 @@ h1 {
     flex-basis: calc(100% / 4 - 40px);
     background-color: #f5f5f5;
     min-width: 150px;
-    height: 100px;
+    height: 90px;
     border-radius: 10px;
     margin: 20px;
     display: flex;
